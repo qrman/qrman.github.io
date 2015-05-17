@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Blog init()"
+date:   2015-05-17 11:05:20
+categories: [hello, world]
+---
+Hello World.
+
+{% highlight java linenos %}
+public class Blog {
+    public void init() {
+        while (haveAnythingToSay()) {
+            writeAPost();
+        }
+    }
+}
+{% endhighlight %}
