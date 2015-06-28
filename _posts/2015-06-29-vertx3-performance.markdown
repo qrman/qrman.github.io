@@ -2,6 +2,7 @@
 layout: post
 title:  "Vert.x 3 - faster, better, stronger"
 date:   2015-06-28 23:00:00
+comments: true
 tags: vert.x, java, performance, json
 ---
 
