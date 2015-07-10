@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Vert.x 3 and Guice - the easiest way"
-date:   2015-08-10 23:00:00
+date:   2015-07-10 23:00:00
 comments: true
 tags: vert.x, guice, java
 ---
