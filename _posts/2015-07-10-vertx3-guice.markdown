@@ -38,7 +38,8 @@ public class WimbledonVerticle extends AbstractVerticle {
         Guice.createInjector(new WimbledonModule(vertx)).injectMembers(this);
 
         Router router = Router.router(vertx);
-        router.get("/wimbledon/winner").handler(tournamentWinnerEndpoint::handle);
+        router.get("/wimbledon/winner")
+          .handler(tournamentWinnerEndpoint::handle);
 
         vertx.createHttpServer()
           .requestHandler(router::accept)
@@ -67,7 +68,8 @@ public class WimbledonModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(EventBus.class).toInstance(vertx.eventBus());
-        Names.bindProperties(binder(), extractToProperties(context.config()));
+        Names.bindProperties(binder(), 
+                             extractToProperties(context.config()));
     }
 
     private Properties extractToProperties(JsonObject config) {
@@ -87,12 +89,16 @@ Having it all together we can implement TournamentWinnerEndpoint with injected a
 
 public class TournamentWinnerEndpoint implements Handler<RoutingContext> {
 
+    private final EventBus eventBus;
     private final String player1;
     private final String player2;
-    private final EventBus eventBus;
 
     @Inject
-    public TournamentWinnerEndpoint(EventBus eventBus, @Named("player1") String player1, @Named("player2") String player2) {
+    public TournamentWinnerEndpoint(
+        EventBus eventBus, 
+        @Named("player1") String player1, 
+        @Named("player2") String player2) {
+        
         this.eventBus = eventBus;
         this.player1 = player1;
         this.player2 = player2;
