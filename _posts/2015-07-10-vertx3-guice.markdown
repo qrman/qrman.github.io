@@ -6,7 +6,7 @@ comments: true
 tags: vert.x, guice, java
 ---
 
-[Guice](https://github.com/google/guice) is really easy to use. This post is not about explaining how it works.
+[Guice](https://github.com/google/guice) is really easy to use DI framework. This post is not about explaining how it works.
 
 [Vert.x](http://vertx.io) is also easy (unless you have more then 10 Verticles sending 5k/s messages to each other).
 
@@ -17,7 +17,7 @@ Simple technologies should play well together. So it is with Guice and Vert.x.
 Soon Roger Federer and Novak Djokovic will play for [Wimbledon Championship](http://www.wimbledon.com). Let's use them in small application, 
 which will handles HTTP GET request and returns name of tournament winner based on their Karma.
 
-Below, WimbledonVerticle code snippet shows how Dependency magic happens. While extending AbstractVerticle we already have
+Below, WimbledonVerticle code snippet shows how dependency magic happens. While extending AbstractVerticle we already have
 an instance of Vertx class. Guice allows injecting dependencies into already constructed instance. And that's all (almost).
 
 {% highlight java linenos%}
@@ -51,7 +51,7 @@ public class WimbledonVerticle extends AbstractVerticle {
 {% endhighlight %}
 
 Thanks to WimbledonModule we can bind all necessary dependencies. In this example only EventBus instance and properties are binded.
-Properties comes from config.json file where application port number and Wimbledon players names are defined.
+Properties comes from config.json file where application port number and Wimbledon players' names are defined.
 
 {% highlight java linenos%}
 
