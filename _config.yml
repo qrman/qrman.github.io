@@ -15,3 +15,5 @@ meta_description: >
 markdown: kramdown
 
 permalink: /posts/:year/:month/:day/:title/
+
+gems: [jekyll-redirect-from]

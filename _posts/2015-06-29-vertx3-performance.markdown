@@ -5,6 +5,8 @@ date:   2015-06-28 23:00:00
 comments: true
 tags: vert.x, java, performance, json
 description: Benchmark for Vert.x 3 and Vert.x 2 performance.
+redirect_from:
+  - /2015/06/28/vertx3-performance.html
 ---
 
 ### Vert.x 3 released ###
