@@ -4,6 +4,7 @@ title:  "Vert.x 3 and Guice - the easiest way"
 date:   2015-07-10 23:00:00
 comments: true
 tags: vert.x, guice, java
+description: Post present how easy is to combine Vert.x and Guice DI
 ---
 
 [Guice](https://github.com/google/guice) is really easy to use DI framework. This post is not about explaining how it works.

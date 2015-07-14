@@ -8,5 +8,10 @@ url: "http://qrman.github.io" # the base hostname & protocol for your site
 twitter_username: krzysztof_urman
 github_username:  qrman
 
+meta_description: >
+  Krzysztof Urman's blog about: Java, JVM, Vert.x.
+
 # Build settings
 markdown: kramdown
+
+permalink: /posts/:year/:month/:day/:title/

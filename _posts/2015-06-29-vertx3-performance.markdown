@@ -4,6 +4,7 @@ title:  "Vert.x 3 - faster, better, stronger"
 date:   2015-06-28 23:00:00
 comments: true
 tags: vert.x, java, performance, json
+description: Benchmark for Vert.x 3 and Vert.x 2 performance.
 ---
 
 ### Vert.x 3 released ###
