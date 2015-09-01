@@ -12,8 +12,8 @@ description: Callback Hell defeated with CompletableFuture
 
 Everyone knows that asynchronous is sexy, fancy and jazzy. That could be the end of this post.
 
-But true is, that writing async code is hard.
-Understanding async code is even harder. There are many mature frameworks/libraries which uses promises, mostly in JavaScript world.
+But the truth is, writing async code is hard.
+Understanding async code is even harder. There are many mature frameworks/libraries which use promises, mostly in JavaScript world.
 [AngularJS](https://angularjs.org/) services: $q and $http - are my favourites ones.
 
 ### Callback Hell in Vert.x world ###
@@ -48,13 +48,13 @@ It may look like hell.... Callback Hell. Just look at this example from JUnit te
 }
 {% endhighlight %}
 
-Such code is even hard to display in blog post [sic!]. 
+Such code is even dificult to display in a blog post [sic!]. 
 
-What is happening here? **Poland is World best country in Hammer Throwing** (that also could be the end of the post :) ).
+What is happening here? **Poland is World best country in Hammer Throwing** (which could also be the end of this post) :).
 We want to register 3 players in Hammer Throw Tournament. After registering we are checking that everything is ok.
 
-Code looks ugly. My ```HammerThrowTournament``` class in every method takes Handler as parameter which is passed into ```RedisClient``` and is executed
-when Redis operation ends. To be sure that one operation comes after another we create classic example of Callback Hell. Is there anything we can do with such code?
+That code looks ugly. My ```HammerThrowTournament``` class in every method takes a Handler as a parameter which is passed into ```RedisClient``` and is executed
+when Redis operation ends. To be sure that one operation comes after another we end up with classic example of Callback Hell. Is there anything we can do with such code?
 
 ### CompletableFuture FTW ###
 
@@ -116,7 +116,7 @@ method we can pass ```CompletableFuture``` result into another ```CompletableFut
 I'm not an ```CompletableFuture``` expert. You can read more about it [here](http://www.nurkiewicz.com/2013/05/java-8-definitive-guide-to.html)
 and if you know how to pronounce ```Anita Włodarczyk``` correctly you can watch this [presentation](https://www.youtube.com/watch?v=S7gCcgTWSPs).
 
-Code is available here: [https://github.com/qrman/defeat-callback-hell](https://github.com/qrman/defeat-callback-hell). Read commits history to track
+Code is available here: [https://github.com/qrman/defeat-callback-hell](https://github.com/qrman/defeat-callback-hell). You can read commit history to track
 code transformation.
 
 Good night and Good luck!
