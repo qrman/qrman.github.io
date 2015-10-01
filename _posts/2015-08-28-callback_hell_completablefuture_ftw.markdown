@@ -3,7 +3,10 @@ layout: post
 title:  "Callback Hell and CompletableFuture FTW"
 date:   2015-08-28 23:00:00
 comments: true
-tags: java, CompletableFuture, Callback Hell
+tags: 
+  - java
+  - CompletableFuture
+  - Callback Hell
 description: Callback Hell defeated with CompletableFuture
 
 ---

@@ -3,7 +3,10 @@ layout: post
 title:  "Vert.x 3 and Guice - the easiest way"
 date:   2015-07-10 23:00:00
 comments: true
-tags: vert.x, guice, java
+tags: 
+  - vert.x
+  - guice
+  - java
 description: Post present how easy is to combine Vert.x and Guice DI
 redirect_from:
   - /2015/07/10/vertx3-guice.html
