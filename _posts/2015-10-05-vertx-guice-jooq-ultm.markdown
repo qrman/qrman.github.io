@@ -19,7 +19,7 @@ description: Post describes how such frameworks/libs like Vert.x, jOOQ, Guice an
 ### Vert.x / Guice / jOOQ / ULTM ###
 
 When you are choosing Vert.x as your main framework you have to be fully asynchronous, they said.
-```JDBC```? Forget! You should avoid thread blocking. There are only few of them, so you cannot tell them to stop.
+```JDBC```? Forget it! You should avoid thread blocking. There are only few of them, so you cannot tell them to stop.
 
 
 Anyway, Vert.x allows running blocking code, so why not to try it? Let's block some threads and go back to developer's comfort zone where SQL queries run one after 
@@ -34,7 +34,7 @@ According to [potatopro.com](http://www.potatopro.com) Poland is one of the worl
 that in order to survive winter you need to have your basement full of potatoes. 
 
 When you buy potatoes you buy them in bags, potato bags - 10 kilos each. With potato bags comes huge risk. If inside the bag there is at least one rotten potato,
-then soon or later all of them will be rotten. Winter will be long and you will die...
+then sooner or later all of them will be rotten. Winter will be long and you will die...
 
 Basically, what you have to do is to open potato bag before the purchase and check whether potatoes are fresh or not. If one is rotten - then whole bag goes to trash.
 To summarize:
