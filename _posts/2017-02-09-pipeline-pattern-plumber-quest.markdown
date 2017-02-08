@@ -17,7 +17,7 @@ description: Some thoughts about Pipeline Pattern in Java 8 world.
 
 ### Describing a problem ###
 
-Back then in old good Java 7 days one of my favourite design pattern was *Pipeline Pattern*.
+Back then in old good Java 7 days, one of my favourite design pattern was *Pipeline Pattern*.
 Following this pattern allows me to have my code very well organized. Especially when request processing 
 requires many steps. 
 
@@ -53,8 +53,8 @@ Flat processing structure is something I always appreciate. It is easy to read,
 flexible and ready for adding new features in process.
 
 
-Recently I decided to refresh this approach while writing new service. It comes to me that since we have Java 8, there 
-are few more ways to implement pipeline pattern. I will present 4 which I found the easiest:
+Recently I've decided to refresh this approach while writing new service. It comes to me that since we have Java 8, there
+are few more ways to implement pipeline pattern. I will present the four easiest ones:
 
 - classical Pipeline Pattern
 - Optional way
@@ -63,7 +63,7 @@ are few more ways to implement pipeline pattern. I will present 4 which I found 
 
 ### Mario Bros Dilemma ###
 
-But first, some inspiration for writing simple program. Mario, well known plumber is looking for princess. Most of the time,
+Let's start with some inspiration for writing a simple program. Mario, well known plumber is looking for princess. Most of the time,
 the only clue he gets is:
 
 > Thank You Mario!
@@ -80,7 +80,7 @@ Each plumber:
 - IT Plumber,
 - Ultimate Plumber
 
-can beat one or more beast from:
+can beat one or more beasts, such as:
 
 - Dragon,
 - Kraken,
@@ -102,7 +102,7 @@ INFO: Result: Mario will beat the DRAGON with CANDY and save princess Francesca!
 
 ### Old is Gold - Pipeline Pattern ###
 
-First we need some glue code. Two simple classes:
+Firstly, we need some glue code. Two simple classes:
 
 {% highlight java %}
 
@@ -165,16 +165,15 @@ public class PipelineFlow {
 
 {% endhighlight %}
 
-The above code is really simple. Plumber quest consist 3 steps. First is to find princess name,
-then check beast weakness and at the end verify whether plumber can beat the best. As you can see,
-there are no Java 8 feature in this code. All next 3 samples are available only in Java 8 world.
+The above code is really simple. Plumber quest consists of three steps. Firstly, he should find princess name,
+then check beast weakness and finally verify whether plumber can beat the beast or not. As you can see
+there are no Java 8 features in this code. All next three samples are available only in Java 8 world.
 
 ### Optional Way ###
 
-Optional's gives much more then `isPresent()` and `get()`. [Optional](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) API contain some useful methods
+Optional gives much more than `isPresent()` and `get()`. [Optional](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) API contains some useful methods
 which are helpful in simple data transformation such as `map()` and `filter()`. Optional wasn't designed for solving pipeline pattern
-but for simple pipes they are very handy. We just need to wrap input data into Optional with `Optional.of()` method and than call map
-as many time as many steps are in pipe. Second flow looks as follow:
+but they are very handy for simple pipes. We just need to wrap input data using Optional with `Optional.of()` method and then call `map` in every step in the pipe. Second flow looks as following:
 
 {% highlight java %}
 
@@ -204,7 +203,7 @@ public class OptionalFlow {
 
 ### Streams, Streams, Streams ###
 
-Very similar effects gives wrapping all steps into stream with one element. Stream API is well known for everyone who
+Very similar effects gives wrapping all steps using stream with one element. Stream API is well known for everyone who
 writes anything in Java 8.
 
 {% highlight java %}
@@ -234,15 +233,15 @@ public class StreamFlow {
 
 {% endhighlight %}
 
-Stream look nice but last step - getting result data - is quite lame. We have to call 
-`findFirst()` which return Optional and `get()` at the end. The other way is to call `collector()` and
-grab first element of result list.
+Stream looks nice, but last step - getting result data - is quite lame. We have to call
+`findFirst()` which returns Optional and `get()` at the end. The other way is to call `collector()` and
+take first element of result list.
 
 
 ### Functions for purists ###
 
-Last approach uses `Function` API. The true is that functions were used under the hood in Optional and Stream examples. 
-Right now we will use function explicit. Here we go:
+Last approach uses `Function` API. The truth is that functions were used under the hood in Optional and Stream examples.
+Right now we will use function explicitly. Here we go:
 
 {% highlight java %}
 
@@ -268,11 +267,10 @@ public class FunctionalFlow {
 
 {% endhighlight %}
 
-As you can see there are more than one way to implement pipes in Java 8. You can picked those you like the most.
+As you can see there are more than one way to implement pipes in Java 8. You can pick those you like the most.
 
 ### Epilogue ###
 
-A few weeks ago I started learning RxJava. I realized that modern Pipeline Pattern is RxJava. It is much more easy to dive into
-world of Observables when you followed Pipeline Pattern in the past. What is more, it really easy to rewrite into Rx.
-Last but not least: I found it a quite good approach (when you are not RxNinja),
-to first write Java 8 pipes and then refactor code with usage of Rx streams.
+A few weeks ago I started learning RxJava. I realized that RxJava is the modern Pipeline Pattern. It is much more easy to dive into
+world of Observables when you followed Pipeline Pattern in the past. What is more, it is really easy to rewrite code into Rx.
+Last but not least: I found out that it is quite a good approach (when you are not RxNinja) firstly to write Java 8 pipes and then to refactor code with usage of Rx streams.
